@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)file:///C:/Users/Arie/AppData/Local/Temp/RtmpOSB0ou/report.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Data Visualization</title>
+      
+      <link rel="stylesheet" href="./mechkar aes report_files/jquery.mobile-1.4.5.min.css">
+
+      <script src="./mechkar aes report_files/jquery-1.10.2.js.download"></script>
+      <script>
+      $(document).ready(function(){
+      $('.onetoone').hide();
+      });
+
+      $(function() {
+      $('.origimg').click(function(e) {
+      $('#popup_img').attr('src',$(this).attr('src'));
+      $('#myContainer').hide();
+      var pos = $(document).scrollTop();
+      $('#myContainer').css({'top':pos+20,'left':250, 'position':'absolute', 'border':'1px solid black', 'padding':'0px'});
+      $('#myContainer').show();
+      });
+      $('#myContainer').click(function(e) {
+      $('#myContainer').hide();
+      });
+
+      $('#myform2').submit(function(e) {
+      e.preventDefault();
+      });
+
+      $('#onetoone').on('click',function() {
+      console.log('onetone button - 1');
+      $('#onetoone').hide();
+      $('#aslist').show();
+      // To show only individual rows:
+      $('.Row').hide();
+      $('.onetoone').show();
+      // then we iterate
+      var i = $('.Row').length;
+      // Then we iterate
+      var nxt = $('#idx').val();
+      if (nxt < i & nxt >0) {
+      $('.Row').hide();
+      $('.Row').eq(0).show();
+      $('.Row').eq(nxt).show();
+      } else {
+      $('#idx').val(1)
+      }
+      console.log('onetone button - 2');
+      });
+
+      $('#aslist').on('click',function() {
+      console.log('aslist button - 1');
+      $('#onetoone').show();
+      $('#aslist').hide();
+      $('.onetoone').hide();
+      $('.Row').show();
+      console.log('aslist button - 2');
+      });
+
+      $('#less').on('click',function(){
+      console.log('less button - 1');
+      var i = $('.Row').length;
+      var nxt = parseInt($('#idx').val(),10) - 1;
+      if (nxt < i & nxt >0) {
+      $('#idx').val(nxt)
+      $('.Row').hide();
+      $('.Row').eq(0).show();
+      $('.Row').eq(nxt).show();
+      } else {
+      $('#idx').val(1)
+      }
+      console.log('less button - 2');
+      });
+
+      $('#more').on('click',function(){
+      console.log('more button - 1');
+      var i = $('.Row').length;
+      var nxt = parseInt($('#idx').val(),10) + 1;
+      if (nxt < i & nxt >0) {
+      $('#idx').val(nxt)
+      $('.Row').hide();
+      $('.Row').eq(0).show();
+      $('.Row').eq(nxt).show();
+      } else {
+      $('#idx').val(i)
+      }
+      console.log('more button - 2');
+      });
+
+      $('#idx').on('change', function(){
+      console.log('idx changed - 1');
+      var i = $('.Row').length;
+      var nxt = $('#idx').val();
+      if (nxt < i & nxt >0) {
+      $('#idx').val(nxt)
+      $('.Row').hide();
+      $('.Row').eq(0).show();
+      $('.Row').eq(nxt).show();
+      } else {
+      $('#idx').val(i)
+      }
+      console.log('idx changed - 2');
+      });
+      });
+
+      </script>
+
+      <style type="text/css">
+      .Table
+      {
+      display: table;
+      }
+      .Title
+      {
+      display: table-caption;
+      text-align: center;
+      font-weight: bold;
+      font-size: larger;
+      background-color:#4C6F50;
+      color: #fff;
+      }
+      .Row
+      {
+      display: table-row;
+      }
+      .Row:nth-child(even) {
+        background-color: #56882433;
+      }
+      .Cell
+      {
+      display: table-cell;
+      border: solid;
+      border-width: thin;
+      padding-left: 5px;
+      padding-right: 5px;
+      vertical-align: top;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      }
+      </style>
+
+      </head>
+
+      <body style="">
+      <div id="pageone" data-role="main" class="ui-content">
+      
+<p></p><p></p><h1> Data Visualization &amp; Exploration </h1>
+                <form>
+                <input type="button" id="onetoone" value="Show as Cards">
+                <input type="button" id="aslist" class="onetoone" value="Show as List" style="display: none;">
+                </form>
+                <p>
+                
+</p><p></p><p>
+                </p><div class="Table">
+                <div class="Row">
+                <div class="Cell Title"> Variable </div>
+                <div class="Cell Title"> Distribution </div>
+                <div class="Cell Title"> Descriptive <br> Statistics</div>
+                <div class="Cell Title"> Outliers </div> <div class="Cell Title"> Dependent <br> Variable <br> Distribution </div> </div>
+<div class="Row"><div class="Cell"><b> �..SESSION_INFO_ID </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="file:///C:/Users/Arie/AppData/Local/Temp/RtmpOSB0ou/fig/%EF%BF%BD..SESSION_INFO_ID_1.png" height="150" width="150"><br></div>
+<div class="Cell"> <u>Data type</u>: Categorical Data <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %) </p><p> <u>Number of levels</u>:  281 <br> </p><ul> </ul></div>
+<div class="Cell"></div>
+<div class="Cell"><img class="origimg" src="file:///C:/Users/Arie/AppData/Local/Temp/RtmpOSB0ou/fig/%EF%BF%BD..SESSION_INFO_ID_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> INTERVAL_IN_FILE </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/INTERVAL_IN_FILE_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  682.6 	 <u>StdDev</u>:  747.2 <br><u>Median</u>:  388 	 <u>IQR</u>:  190 - 914 <br><u>Min</u>:  0 	 <u>Max</u>:  3718 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/INTERVAL_IN_FILE_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  1718  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/INTERVAL_IN_FILE_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> VALUE </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/VALUE_1.png" height="150" width="150"><br></div>
+<div class="Cell"> <u>Data type</u>: Categorical Data <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %) </p><p> <u>Number of levels</u>:  2 <br> </p><ul> <li><u> 0 </u>:  75289 </li> <li><u> 1 </u>:  38982 </li> </ul> </div>
+<div class="Cell"></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/VALUE_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> SN </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/SN_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  121.6 	 <u>StdDev</u>:  72.42 <br><u>Median</u>:  120 	 <u>IQR</u>:  59 - 183 <br><u>Min</u>:  0 	 <u>Max</u>:  255 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/SN_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> No outlier values found</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/SN_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> ACCL_X </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/ACCL_X_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  1.771e+04 	 <u>StdDev</u>:  1.635e+04 <br><u>Median</u>:  32767 	 <u>IQR</u>:  2002 - 3.277e+04 <br><u>Min</u>:  -21216 	 <u>Max</u>:  32767 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/ACCL_X_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> No outlier values found</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/ACCL_X_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> ACCL_Y </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/ACCL_Y_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  -3704 	 <u>StdDev</u>:  4568 <br><u>Median</u>:  -3879 	 <u>IQR</u>:  -5431 - -659 <br><u>Min</u>:  -32179 	 <u>Max</u>:  9384 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/ACCL_Y_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  806  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/ACCL_Y_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> ACCL_Z </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/ACCL_Z_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  2.685e+04 	 <u>StdDev</u>:  1.254e+04 <br><u>Median</u>:  32767 	 <u>IQR</u>:  3.277e+04 - 3.277e+04 <br><u>Min</u>:  -4975 	 <u>Max</u>:  32767 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/ACCL_Z_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  2563  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/ACCL_Z_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_1 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_1_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  5.776 	 <u>StdDev</u>:  10.41 <br><u>Median</u>:  1.69 	 <u>IQR</u>:  0.3202 - 9.429 <br><u>Min</u>:  0.04282 	 <u>Max</u>:  169.9 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_1_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  2433  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_1_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_2 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_2_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  2.375 	 <u>StdDev</u>:  3.928 <br><u>Median</u>:  0.4274 	 <u>IQR</u>:  0.1508 - 3.957 <br><u>Min</u>:  0.03151 	 <u>Max</u>:  79.85 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_2_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  2129  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_2_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_3 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_3_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  1.751 	 <u>StdDev</u>:  2.908 <br><u>Median</u>:  0.1892 	 <u>IQR</u>:  0.08415 - 2.699 <br><u>Min</u>:  0.03237 	 <u>Max</u>:  44.62 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_3_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  5248  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_3_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_4 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_4_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  3.302 	 <u>StdDev</u>:  5.471 <br><u>Median</u>:  0.174 	 <u>IQR</u>:  0.07416 - 4.321 <br><u>Min</u>:  0.02836 	 <u>Max</u>:  37.53 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_4_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  12434  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_4_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_5 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_5_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  6.351 	 <u>StdDev</u>:  11.45 <br><u>Median</u>:  0.2574 	 <u>IQR</u>:  0.07939 - 4.415 <br><u>Min</u>:  0.0308 	 <u>Max</u>:  48.9 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_5_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  20848  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_5_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_6 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_6_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  4.184 	 <u>StdDev</u>:  6.535 <br><u>Median</u>:  0.4448 	 <u>IQR</u>:  0.08295 - 7.862 <br><u>Min</u>:  0.02855 	 <u>Max</u>:  44.97 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_6_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  1753  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_6_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_7 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_7_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  2.533 	 <u>StdDev</u>:  4.195 <br><u>Median</u>:  0.2596 	 <u>IQR</u>:  0.07744 - 5.144 <br><u>Min</u>:  0.03002 	 <u>Max</u>:  44.7 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_7_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  1736  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_7_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_8 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_8_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  2.7 	 <u>StdDev</u>:  4.531 <br><u>Median</u>:  0.1293 	 <u>IQR</u>:  0.0653 - 2.274 <br><u>Min</u>:  0.02953 	 <u>Max</u>:  39.6 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_8_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  21842  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_8_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_9 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_9_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  4.021 	 <u>StdDev</u>:  7.021 <br><u>Median</u>:  0.1903 	 <u>IQR</u>:  0.06697 - 1.873 <br><u>Min</u>:  0.03198 	 <u>Max</u>:  26.16 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_9_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  21845  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_9_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_10 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_10_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  2.756 	 <u>StdDev</u>:  4.649 <br><u>Median</u>:  0.1647 	 <u>IQR</u>:  0.06671 - 2.285 <br><u>Min</u>:  0.02886 	 <u>Max</u>:  23.02 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_10_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  21640  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_10_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_11 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_11_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  1.327 	 <u>StdDev</u>:  2.128 <br><u>Median</u>:  0.1283 	 <u>IQR</u>:  0.06419 - 1.887 <br><u>Min</u>:  0.03153 	 <u>Max</u>:  13.56 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_11_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  12095  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_11_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_12 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_12_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  1.225 	 <u>StdDev</u>:  1.963 <br><u>Median</u>:  0.1266 	 <u>IQR</u>:  0.06316 - 1.667 <br><u>Min</u>:  0.03023 	 <u>Max</u>:  12.4 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_12_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  14656  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_12_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_13 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_13_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  2.068 	 <u>StdDev</u>:  3.31 <br><u>Median</u>:  0.1667 	 <u>IQR</u>:  0.0654 - 3.22 <br><u>Min</u>:  0.02596 	 <u>Max</u>:  19.27 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_13_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  10468  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_13_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_14 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_14_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  0.9512 	 <u>StdDev</u>:  1.444 <br><u>Median</u>:  0.1165 	 <u>IQR</u>:  0.06187 - 1.302 <br><u>Min</u>:  0.03132 	 <u>Max</u>:  12.33 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_14_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  15601  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_14_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_15 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_15_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  0.5815 	 <u>StdDev</u>:  0.8696 <br><u>Median</u>:  0.08968 	 <u>IQR</u>:  0.06047 - 0.8233 <br><u>Min</u>:  0.02985 	 <u>Max</u>:  7.985 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_15_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  9937  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_15_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_16 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_16_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  0.5055 	 <u>StdDev</u>:  0.7459 <br><u>Median</u>:  0.08533 	 <u>IQR</u>:  0.06376 - 0.8978 <br><u>Min</u>:  0.03234 	 <u>Max</u>:  5.963 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_16_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  2143  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_16_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_17 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_17_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  0.4505 	 <u>StdDev</u>:  0.6705 <br><u>Median</u>:  0.07192 	 <u>IQR</u>:  0.05989 - 0.6358 <br><u>Min</u>:  0.02844 	 <u>Max</u>:  4.645 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_17_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  13126  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_17_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_18 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_18_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  0.3967 	 <u>StdDev</u>:  0.5679 <br><u>Median</u>:  0.07048 	 <u>IQR</u>:  0.05922 - 0.5769 <br><u>Min</u>:  0.02965 	 <u>Max</u>:  3.787 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_18_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  10048  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_18_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_19 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_19_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  0.352 	 <u>StdDev</u>:  0.4832 <br><u>Median</u>:  0.07449 	 <u>IQR</u>:  0.06039 - 0.5996 <br><u>Min</u>:  0.02878 	 <u>Max</u>:  2.79 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_19_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  2711  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_19_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_20 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_20_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  0.3181 	 <u>StdDev</u>:  0.4205 <br><u>Median</u>:  0.07952 	 <u>IQR</u>:  0.06166 - 0.5619 <br><u>Min</u>:  0.03116 	 <u>Max</u>:  2.486 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_20_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  2291  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_20_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_21 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_21_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  0.2745 	 <u>StdDev</u>:  0.3566 <br><u>Median</u>:  0.07035 	 <u>IQR</u>:  0.05926 - 0.4884 <br><u>Min</u>:  0.02895 	 <u>Max</u>:  3.056 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_21_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  1671  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_21_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_22 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_22_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  0.2776 	 <u>StdDev</u>:  0.3638 <br><u>Median</u>:  0.07195 	 <u>IQR</u>:  0.05987 - 0.5175 <br><u>Min</u>:  0.02887 	 <u>Max</u>:  2.589 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_22_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  1568  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_22_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_23 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_23_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  0.2915 	 <u>StdDev</u>:  0.3732 <br><u>Median</u>:  0.08888 	 <u>IQR</u>:  0.06281 - 0.5046 <br><u>Min</u>:  0.03271 	 <u>Max</u>:  2.737 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_23_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  2152  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_23_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_24 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_24_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  0.3864 	 <u>StdDev</u>:  0.5099 <br><u>Median</u>:  0.1368 	 <u>IQR</u>:  0.06393 - 0.5429 <br><u>Min</u>:  0.02845 	 <u>Max</u>:  2.737 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_24_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  8254  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_24_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_25 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_25_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  0.4249 	 <u>StdDev</u>:  0.5096 <br><u>Median</u>:  0.2141 	 <u>IQR</u>:  0.06394 - 0.6264 <br><u>Min</u>:  0.03116 	 <u>Max</u>:  3.858 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_25_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  4245  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_25_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_26 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_26_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  0.372 	 <u>StdDev</u>:  0.4603 <br><u>Median</u>:  0.165 	 <u>IQR</u>:  0.06384 - 0.609 <br><u>Min</u>:  0.03072 	 <u>Max</u>:  4.88 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_26_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  2053  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_26_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_27 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_27_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  0.2887 	 <u>StdDev</u>:  0.3607 <br><u>Median</u>:  0.09954 	 <u>IQR</u>:  0.06456 - 0.4797 <br><u>Min</u>:  0.02945 	 <u>Max</u>:  4.043 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_27_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  1814  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_27_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_28 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_28_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  0.2525 	 <u>StdDev</u>:  0.3077 <br><u>Median</u>:  0.08746 	 <u>IQR</u>:  0.06356 - 0.4653 <br><u>Min</u>:  0.02948 	 <u>Max</u>:  2.654 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_28_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  1280  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_28_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_29 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_29_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  0.2522 	 <u>StdDev</u>:  0.3017 <br><u>Median</u>:  0.1075 	 <u>IQR</u>:  0.0638 - 0.4515 <br><u>Min</u>:  0.02956 	 <u>Max</u>:  3.086 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_29_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  1441  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_29_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_30 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_30_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  0.3137 	 <u>StdDev</u>:  0.3892 <br><u>Median</u>:  0.1305 	 <u>IQR</u>:  0.06679 - 0.5024 <br><u>Min</u>:  0.03027 	 <u>Max</u>:  3.367 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_30_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  2906  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_30_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_31 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_31_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  0.3887 	 <u>StdDev</u>:  0.5016 <br><u>Median</u>:  0.1326 	 <u>IQR</u>:  0.06428 - 0.5491 <br><u>Min</u>:  0.02618 	 <u>Max</u>:  4.626 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_31_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  8682  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_31_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BAND_ARR_32 </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_32_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  0.249 	 <u>StdDev</u>:  0.306 <br><u>Median</u>:  0.09103 	 <u>IQR</u>:  0.06289 - 0.412 <br><u>Min</u>:  0.02984 	 <u>Max</u>:  4.14 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_32_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  2312  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BAND_ARR_32_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BATTERY </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BATTERY_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  3653 	 <u>StdDev</u>:  220.9 <br><u>Median</u>:  3646 	 <u>IQR</u>:  3408 - 3855 <br><u>Min</u>:  2427 	 <u>Max</u>:  3998 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BATTERY_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  63  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BATTERY_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BIT_FLAG </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BIT_FLAG_1.png" height="150" width="150"><br></div>
+<div class="Cell"> <u>Data type</u>: Categorical Data <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %) </p><p> <u>Number of levels</u>:  4 <br> </p><ul> <li><u> 65 </u>:  10950 </li> <li><u> 67 </u>:  6002 </li> <li><u> 69 </u>:  65985 </li> <li><u> 71 </u>:  31334 </li> </ul> </div>
+<div class="Cell"></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BIT_FLAG_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> MAX_VALUE </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/MAX_VALUE_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  9.78 	 <u>StdDev</u>:  14.26 <br><u>Median</u>:  1.887 	 <u>IQR</u>:  0.4796 - 19.32 <br><u>Min</u>:  0.06268 	 <u>Max</u>:  169.9 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/MAX_VALUE_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  1072  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/MAX_VALUE_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> MIC_TD_RAW </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/MIC_TD_RAW_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  0.005386 	 <u>StdDev</u>:  0.007651 <br><u>Median</u>:  0.000937 	 <u>IQR</u>:  0.0002737 - 0.01126 <br><u>Min</u>:  8.763e-05 	 <u>Max</u>:  0.07927 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/MIC_TD_RAW_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  707  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/MIC_TD_RAW_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> MIN_VALUE </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/MIN_VALUE_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  0.1742 	 <u>StdDev</u>:  0.2171 <br><u>Median</u>:  0.05238 	 <u>IQR</u>:  0.04431 - 0.2938 <br><u>Min</u>:  0.02461 	 <u>Max</u>:  1.603 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/MIN_VALUE_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  1703  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/MIN_VALUE_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> NTC </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/NTC_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  1444 	 <u>StdDev</u>:  55.28 <br><u>Median</u>:  1432 	 <u>IQR</u>:  1404 - 1483 <br><u>Min</u>:  1327 	 <u>Max</u>:  1640 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/NTC_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  38  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/NTC_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> VAA </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/VAA_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  2856 	 <u>StdDev</u>:  11.34 <br><u>Median</u>:  2857 	 <u>IQR</u>:  2851 - 2862 <br><u>Min</u>:  2823 	 <u>Max</u>:  2896 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/VAA_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  26  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/VAA_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> ADVERTISE_TS </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/ADVERTISE_TS_1.png" height="150" width="150"><br></div>
+<div class="Cell"> <u>Data type</u>: Categorical Data <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %) </p><p> <u>Number of levels</u>:  6 <br> </p><ul> </ul></div>
+<div class="Cell"></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/ADVERTISE_TS_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> BATT_LEVEL </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BATT_LEVEL_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  69.96 	 <u>StdDev</u>:  20.11 <br><u>Median</u>:  70 	 <u>IQR</u>:  49 - 90 <br><u>Min</u>:  -25 	 <u>Max</u>:  97 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BATT_LEVEL_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> -13, -20, -21, -23, -15, -25</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/BATT_LEVEL_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> DATE </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/DATE_1.png" height="150" width="150"><br></div>
+<div class="Cell"> <u>Data type</u>: Categorical Data <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %) </p><p> <u>Number of levels</u>:  254 <br> </p><ul> </ul></div>
+<div class="Cell"></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/DATE_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> FIRST_PACKET_TS </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/FIRST_PACKET_TS_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  432.2 	 <u>StdDev</u>:  1168 <br><u>Median</u>:  204 	 <u>IQR</u>:  196 - 275 <br><u>Min</u>:  189 	 <u>Max</u>:  9170 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/FIRST_PACKET_TS_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> There are  136  outlier values</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/FIRST_PACKET_TS_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> GW_MAC </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/GW_MAC_1.png" height="150" width="150"><br></div>
+<div class="Cell"> <u>Data type</u>: Categorical Data <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %) </p><p> <u>Number of levels</u>:  3 <br> </p><ul> <li><u> D3834151EE4D </u>:  779 </li> <li><u> E0D87D23F51F </u>:  87783 </li> <li><u> F0117DB8CAD2 </u>:  25709 </li> </ul> </div>
+<div class="Cell"></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/GW_MAC_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> GW_NAME </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/GW_NAME_1.png" height="150" width="150"><br></div>
+<div class="Cell"> <u>Data type</u>: Categorical Data <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %) </p><p> <u>Number of levels</u>:  4 <br> </p><ul> <li><u> fyyMachine nsame </u>:  2415 </li> <li><u> Machine 2nadme </u>:  1437 </li> <li><u> Machine d1namde </u>:  1916 </li> <li><u> Machine name </u>:  108503 </li> </ul> </div>
+<div class="Cell"></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/GW_NAME_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> OPERATION_VALID </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/OPERATION_VALID_1.png" height="150" width="150"><br></div>
+<div class="Cell"></div>
+<div class="Cell"></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/OPERATION_VALID_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> RSSI </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/RSSI_1.png" height="150" width="150"><br></div>
+<div class="Cell" style="align: top;"> <u>Data type</u>: Continuous <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %)</p><p> <u>Mean</u>:  -65.87 	 <u>StdDev</u>:  10.21 <br><u>Median</u>:  -67 	 <u>IQR</u>:  -71 - -61 <br><u>Min</u>:  -93 	 <u>Max</u>:  0 </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/RSSI_2.png" height="150" width="250"><br> <u>Outlier values</u>: <br> -93, 0, -87, -88, -91, -89, -92</div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/RSSI_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> TOOL_MAC </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/TOOL_MAC_1.png" height="150" width="150"><br></div>
+<div class="Cell"> <u>Data type</u>: Categorical Data <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %) </p><p> <u>Number of levels</u>:  7 <br> </p><ul> </ul></div>
+<div class="Cell"></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/TOOL_MAC_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> TOOL_NAME </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/TOOL_NAME_1.png" height="150" width="150"><br></div>
+<div class="Cell"> <u>Data type</u>: Categorical Data <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %) </p><p> <u>Number of levels</u>:  11 <br> </p><ul> </ul></div>
+<div class="Cell"></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/TOOL_NAME_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> S_I_CREATED_AT </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/S_I_CREATED_AT_1.png" height="150" width="150"><br></div>
+<div class="Cell"> <u>Data type</u>: Categorical Data <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %) </p><p> <u>Number of levels</u>:  281 <br> </p><ul> </ul></div>
+<div class="Cell"></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/S_I_CREATED_AT_3.png" height="150" width="150"><br></div>
+</div>
+<div class="Row"><div class="Cell"><b> LABELS_CREATED_AT </b><p>  </p></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/LABELS_CREATED_AT_1.png" height="150" width="150"><br></div>
+<div class="Cell"> <u>Data type</u>: Categorical Data <p> <u>Data length</u>:  114271 / 114271  ( 100 %) <br> <u>Missing</u>:  0  ( 0 %) </p><p> <u>Number of levels</u>:  204 <br> </p><ul> </ul></div>
+<div class="Cell"></div>
+<div class="Cell"><img class="origimg" src="./mechkar aes report_files/LABELS_CREATED_AT_3.png" height="150" width="150"><br></div>
+</div>
+</div>
+</div>
+                <div data-role="popup" id="myContainer" style="display: none;">
+                <img id="popup_img" src="file:///C:/Users/Arie/AppData/Local/Temp/RtmpOSB0ou/report.html">
+                </div>
+                
+                
+                
+                <p>
+                </p><div class="onetoone" style="display: none;">
+                <form id="myform2">
+                <span> <input type="button" id="less" value=" &lt;&lt; "> </span>
+                <span> <input id="idx" name="idx" value="1"></span>
+                <span> <input type="button" id="more" value=" &gt;&gt; "> </span>
+                </form>
+                </div>
+                <p>
+                
+                
+</p></body></html>
